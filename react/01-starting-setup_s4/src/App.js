@@ -3,6 +3,7 @@ import componentsImage from "./assets/images/components.png";
 import stateImage from "./assets/images/state.png";
 import eventsImage from "./assets/images/events.png";
 import Card from "./components/Card";
+import Header from "./components/Header";
 
 const concepts = [
   {
@@ -28,15 +29,21 @@ const concepts = [
 function App() {
   return (
     <div>
-      <header>
+      <Header
+        src={keyConceptsImage}
+        alt="Medal badge with a star"
+        title="Key React Concepts"
+        desc="elected key React concepts you should know about"
+      />
+      {/* <header>
         <img src={keyConceptsImage} alt="Medal badge with a star" />
         <h1>Key React Concepts</h1>
         <p>Selected key React concepts you should know about</p>
-      </header>
+      </header> */}
       <ul id="concepts">
-        <Card concept={concepts[0]} />
-        <Card concept={concepts[1]} />
-        <Card concept={concepts[2]} />
+        {concepts.map((concept) => (
+          <Card concept={concept} key={concept.title} />
+        ))}
       </ul>
     </div>
   );
