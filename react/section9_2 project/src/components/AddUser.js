@@ -5,7 +5,7 @@ import ErrorModal from "./ErrorModal";
 import Card from "./UI/Card";
 const AddUser = (props) => {
   const [error, setError] = useState(undefined);
-  const initialState = { name: "", age: "" };
+  const initialState = { name: "", age: "", id: "" };
   const setUserList = props.setUserList;
   const [user, setUser] = useState(initialState);
   const submitEventHandler = (event) => {
@@ -26,7 +26,7 @@ const AddUser = (props) => {
       return;
     }
     setUserList((prev) => {
-      return [...prev, user];
+      return [...prev, { name: user.name, age: user.age, id: Math.random() }];
     });
     setUser(initialState);
 
@@ -36,6 +36,7 @@ const AddUser = (props) => {
     setUser((prev) => {
       return { ...prev, [type]: value };
     });
+    console.log(user);
   };
   const errorHandler = () => {
     setError(null);
