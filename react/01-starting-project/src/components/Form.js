@@ -1,4 +1,4 @@
-import "./Form.css";
+import classes from "./Form.module.css";
 import React, { useState } from "react";
 const Form = (props) => {
   const [csaving, setcsaving] = useState("");
@@ -44,8 +44,8 @@ const Form = (props) => {
     setduration("");
   };
   return (
-    <form className="form" onSubmit={onSubmitHandler}>
-      <div className="input-group">
+    <form className={classes.form} onSubmit={onSubmitHandler}>
+      <div className={classes["input-group"]}>
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
           <input
@@ -65,7 +65,7 @@ const Form = (props) => {
           />
         </p>
       </div>
-      <div className="input-group">
+      <div className={classes["input-group"]}>
         <p>
           <label htmlFor="expected-return">
             Expected Interest (%, per year)
@@ -87,11 +87,15 @@ const Form = (props) => {
           />
         </p>
       </div>
-      <p className="actions">
-        <button type="reset" className="buttonAlt" onClick={onResetHandler}>
+      <p className={classes.actions}>
+        <button
+          type="reset"
+          className={classes.buttonAlt}
+          onClick={onResetHandler}
+        >
           Reset
         </button>
-        <button type="submit" className="button">
+        <button type="submit" className={classes.button}>
           Calculate
         </button>
       </p>

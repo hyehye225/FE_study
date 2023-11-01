@@ -44,7 +44,7 @@ function App() {
       {data.length > 0 ? (
         <Table datas={data} initialInvestment={input["current-savings"]} />
       ) : (
-        <p>No Datas Found.</p>
+        <p style={{ textAlign: "center" }}>No Datas Found.</p>
       )}
     </div>
   );
