@@ -11,11 +11,9 @@ function App() {
   useEffect(() => {
     const transformTask = (tasksObj) => {
       const loadedTasks = [];
-      console.log(tasksObj);
       for (const taskKey in tasksObj) {
         loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
       }
-      console.log(loadedTasks);
       setTasks(loadedTasks);
     };
     fetchTasks(
