@@ -44,6 +44,12 @@ const Checkout = (props) => {
     }
 
     // cart data를 제출한다...
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    });
   };
 
   return (
